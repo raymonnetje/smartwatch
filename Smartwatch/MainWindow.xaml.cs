@@ -23,6 +23,7 @@ namespace Smartwatch
     {
         DateTime currentTime;
         Boolean runningApp;
+        Label labelTime2;
 
         public MainWindow()
         {
@@ -39,7 +40,7 @@ namespace Smartwatch
             while (runningApp == true)
             {
                 currentTime = Time._instance.getTime();
-                Console.WriteLine(currentTime.ToString());
+                labelTime2.Content = currentTime.ToString();
                 Thread.Sleep(3000);
             }
             

@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="450" Width="450">
     <Grid>
-        
+        <Label x:Name="labelTime" Content="label" HorizontalAlignment="Left" Height="30" Margin="54,71,0,0" VerticalAlignment="Top" Width="227"/>
+
     </Grid>
 </Window>
