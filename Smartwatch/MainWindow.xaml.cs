@@ -23,16 +23,15 @@ namespace Smartwatch
     {
         DateTime currentTime;
         Boolean runningApp;
-        
+        TimeStateClient changeState;
 
         public MainWindow()
         {
             InitializeComponent();
             runningApp = true;
+            changeState = new TimeStateClient(new AmFormat());
             Thread timeNow = new Thread(new ThreadStart(getCurrentTime));
             timeNow.Start();
-            
-            //Console.WriteLine(Time._instance.getTime());
         }
 
         public void getCurrentTime()
@@ -59,6 +58,24 @@ namespace Smartwatch
                 Console.WriteLine(exception);
                 
             }
+        }
+
+        public void changeTimeFormat(string amOrPm)
+        {
+            if (amOrPm == "Smartwatch.AmFormat")
+            {
+                LabelState.Content = "AM";
+            }
+            else
+            {
+                LabelState.Content = "PM";
+            }
+        }
+
+        private void ButtonState_Click(object sender, RoutedEventArgs e)
+        {
+            changeState.Request();
+            changeTimeFormat(changeState.State.ToString());
         }
     }
 }
