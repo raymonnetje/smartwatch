@@ -23,7 +23,7 @@ namespace Smartwatch
     {
         DateTime currentTime;
         Boolean runningApp;
-        Label labelTime2;
+        
 
         public MainWindow()
         {
@@ -40,10 +40,25 @@ namespace Smartwatch
             while (runningApp == true)
             {
                 currentTime = Time._instance.getTime();
-                labelTime2.Content = currentTime.ToString();
+                writeTime(currentTime);
+                //labelTime.Dispatcher.Invoke(() => labelTime.Content = currentTime.ToString());
                 Thread.Sleep(3000);
             }
             
+        }
+
+        public void writeTime(DateTime currentTime)
+        {
+            try
+            {
+                labelTime.Dispatcher.Invoke(() => labelTime.Content = currentTime.ToString("hh:mm"));
+            }
+            catch (TaskCanceledException exception)
+            {
+                runningApp = false;
+                Console.WriteLine(exception);
+                
+            }
         }
     }
 }
