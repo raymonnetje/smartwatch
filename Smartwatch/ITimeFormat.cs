@@ -11,21 +11,21 @@ namespace Smartwatch
         void Handle(TimeStateClient state);
     }
 
-    public class AmFormat : ITimeFormat
+    public class TwelveHoursFormat : ITimeFormat
     {
         public void Handle(TimeStateClient state)
         {
-            //Change the state to AM
-            state.State = new PmFormat();
+            //Change the state to TwentyFourHours
+            state.State = new TwentyFourHoursFormat();
         }
     }
 
-    public class PmFormat : ITimeFormat
+    public class TwentyFourHoursFormat : ITimeFormat
     {
         public void Handle(TimeStateClient state)
         {
-            //Change the state to PM
-            state.State = new AmFormat();
+            //Change the state to TwelveHours
+            state.State = new TwelveHoursFormat();
         }
     }
 }
