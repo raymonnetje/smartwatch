@@ -30,7 +30,7 @@ namespace Smartwatch
         {
             InitializeComponent();
             runningApp = true;
-            changeState = new TimeStateClient(new TwelveHoursFormat());
+            changeState = new TimeStateClient(new TwentyFourHoursFormat());
             Thread timeNow = new Thread(new ThreadStart(getCurrentTime));
             timeNow.Start();
         }
@@ -42,7 +42,7 @@ namespace Smartwatch
                 currentTime = Time._instance.getTime();
                 writeTime(currentTime, timeformat);
                 //labelTime.Dispatcher.Invoke(() => labelTime.Content = currentTime.ToString());
-                Thread.Sleep(3000);
+                Thread.Sleep(2000);
             }
             
         }
@@ -61,9 +61,9 @@ namespace Smartwatch
             }
         }
 
-        public void changeTimeFormat(string amOrPm)
+        public void changeTimeFormat(string twelveOrtwentyfour)
         {
-            if (amOrPm == "Smartwatch.TwelveHoursFormat")
+            if (twelveOrtwentyfour == "Smartwatch.TwelveHoursFormat")
             {
                 LabelState.Content = "TwelveHoursFormat";
                 timeformat = "hh:mm";
