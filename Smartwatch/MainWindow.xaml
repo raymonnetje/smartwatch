@@ -3,9 +3,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="450" Width="450">
     <Grid>
-        <Label x:Name="labelTime" Content="label" HorizontalAlignment="Left" Height="30" Margin="54,71,0,0" VerticalAlignment="Top" Width="227"/>
-        <Button x:Name="ButtonState" Content="12/24" HorizontalAlignment="Left" Height="25" Margin="165,30,0,0" VerticalAlignment="Top" Width="50" Click="ButtonState_Click"/>
-        <Label x:Name="LabelState" Content="24Hour" HorizontalAlignment="Left" Height="25" Margin="54,30,0,0" VerticalAlignment="Top" Width="76"/>
+        <Image Margin="105,0,106,-1" Source="Smartwatch-Mockup_03.jpg" Stretch="Fill"/>
+
+        <Label x:Name="labelTime" Content="label" HorizontalAlignment="Center" Height="44" Margin="183,194,194,181" VerticalAlignment="Center" Width="65" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" Padding="6,5,5,15" FontSize="22"/>
+        <Button x:Name="ButtonState" Content="12/24" HorizontalAlignment="Left" Height="25" Margin="382,10,0,0" VerticalAlignment="Top" Width="50" Click="ButtonState_Click"/>
+        <Label x:Name="LabelState" Content="24Hour" HorizontalAlignment="Left" Height="25" Margin="147,140,0,0" VerticalAlignment="Top" Width="76" Foreground="White"/>
 
     </Grid>
 </Window>
