@@ -5,9 +5,19 @@
     <Grid>
         <Image Margin="105,0,106,-1" Source="Smartwatch-Mockup_03.jpg" Stretch="Fill"/>
 
-        <Label x:Name="labelTime" Content="label" HorizontalAlignment="Center" Height="44" Margin="183,194,194,181" VerticalAlignment="Center" Width="65" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" Padding="6,5,5,15" FontSize="22"/>
-        <Button x:Name="ButtonState" Content="12/24" HorizontalAlignment="Left" Height="25" Margin="382,10,0,0" VerticalAlignment="Top" Width="50" Click="ButtonState_Click"/>
-        <Label x:Name="LabelState" Content="24Hour" HorizontalAlignment="Left" Height="25" Margin="147,140,0,0" VerticalAlignment="Top" Width="76" Foreground="White"/>
+        <Label x:Name="labelTime" Content="label" HorizontalAlignment="Center" Height="44" Margin="183,194,151,181" VerticalAlignment="Center" Width="108" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" Padding="6,5,5,15" FontSize="22"/>
+        <Button x:Name="ButtonState" Content="12/24" HorizontalAlignment="Left" Height="40" Margin="170,276,0,0" VerticalAlignment="Top" Width="41" Click="ButtonState_Click" Foreground="{x:Null}" BorderBrush="{x:Null}">
+            <Button.Background>
+                <ImageBrush ImageSource="Button_1224.png"/>
+            </Button.Background>
+        </Button>
+        <Label x:Name="LabelState" Content="" HorizontalAlignment="Left" Height="25" Margin="200,169,0,0" VerticalAlignment="Top" Width="36" Foreground="Black"/>
+        <Button x:Name="Button_Twitter" Content="Button" HorizontalAlignment="Left" Height="40" Margin="218,276,0,0" VerticalAlignment="Top" Width="46" Foreground="{x:Null}" BorderBrush="{x:Null}">
+            <Button.Background>
+                <ImageBrush ImageSource="Button_twitter.png"/>
+            </Button.Background>
+        </Button>
+        <Label x:Name="Label_Datum" Content="Datum" HorizontalAlignment="Left" Height="23" Margin="188,226,0,0" VerticalAlignment="Top" Width="60" FontSize="10"/>
 
     </Grid>
 </Window>
