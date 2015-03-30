@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Smartwatch
 {
-    public class TimeStateClient
+    public class TimeStateClient : IWatch
     {
         public TimeStateClient(ITimeFormat state)
         {
@@ -19,6 +19,11 @@ namespace Smartwatch
         public void Request()
         {
             State.Handle(this);
+        }
+
+        public void Handle(TimeStateClient state)
+        {
+            throw new NotImplementedException();
         }
     }
 }

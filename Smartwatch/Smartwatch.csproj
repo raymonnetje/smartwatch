@@ -53,9 +53,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="ITimeFormat.cs" />
-    <Compile Include="Time.cs" />
-    <Compile Include="TimeStateClient.cs" />
+    <Compile Include="Creator.cs" />
+    <Compile Include="State pattern\ITimeFormat.cs" />
+    <Compile Include="IWatch.cs" />
+    <Compile Include="Singleton\Time.cs" />
+    <Compile Include="State pattern\TimeStateClient.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -104,6 +106,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Button_1224.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Button_home.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

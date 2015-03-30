@@ -23,19 +23,26 @@ namespace Smartwatch
     {
         DateTime currentTime;
         Boolean runningApp;
-        TimeStateClient changeState;
-        String timeformat = "HH:mm";
+        String timeformat;
+        Creator createFactory;
 
+        /// <summary>
+        /// Initialize the variables
+        /// Start a thread for getting the time from the singleton
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();
+            createFactory = new Creator();
+            timeformat = "HH:mm";
             runningApp = true;
-            LabelState.Dispatcher.Invoke(() => LabelState.Opacity = 0);
-            changeState = new TimeStateClient(new TwentyFourHoursFormat());
             Thread timeNow = new Thread(new ThreadStart(getCurrentTime));
             timeNow.Start();
         }
 
+        /// <summary>
+        /// Get the time every 2 seconds while the app is running
+        /// </summary>
         public void getCurrentTime()
         {
             while (runningApp == true)
@@ -47,6 +54,13 @@ namespace Smartwatch
             
         }
 
+        /// <summary>
+        /// Write the current time in labelTime
+        /// Write the current date in Label_Datum
+        /// Checking when using am or pm in the if else statement 
+        /// </summary>
+        /// <param name="currentTime">The current time object</param>
+        /// <param name="timeformat">The right time format string</param>
         public void writeTime(DateTime currentTime, string timeformat)
         {
             try
@@ -61,6 +75,10 @@ namespace Smartwatch
                 {
                     LabelState.Dispatcher.Invoke(() => LabelState.Content = "AM");
                 }
+                else
+                {
+                    LabelState.Dispatcher.Invoke(() => LabelState.Content = "");
+                }
             }
             catch (TaskCanceledException exception)
             {
@@ -70,6 +88,11 @@ namespace Smartwatch
             }
         }
 
+        /// <summary>
+        /// Get by number of month the righteous month name
+        /// </summary>
+        /// <param name="month">number of month</param>
+        /// <returns>Dutch month name</returns>
         public string getMonthName(string month)
         {
             switch (month)
@@ -90,24 +113,39 @@ namespace Smartwatch
             }
         }
 
+        /// <summary>
+        /// Check if the state is 12 or 24 hour format.
+        /// Change the variable timeformat for displaying the right timeformat.
+        /// </summary>
+        /// <param name="twelveOrtwentyfour">state in string</param>
         public void changeTimeFormat(string twelveOrtwentyfour)
         {
             if (twelveOrtwentyfour == "Smartwatch.TwelveHoursFormat")
             {
-                LabelState.Dispatcher.Invoke(() => LabelState.Opacity = 100);
                 timeformat = "hh:mm";
             }
             else
             {
-                LabelState.Dispatcher.Invoke(() => LabelState.Opacity = 0);
                 timeformat = "HH:mm";
             }
         }
 
         private void ButtonState_Click(object sender, RoutedEventArgs e)
         {
-            changeState.Request();
-            changeTimeFormat(changeState.State.ToString());
+            IWatch watchObj = createFactory.ReturnInstanceType(1);
+            Console.WriteLine(watchObj.ToString());
+            changeTimeFormat(watchObj.ToString());
+        }
+
+        private void ButtonTwitter_Click(object sender, RoutedEventArgs e)
+        {
+            IWatch watchObj = createFactory.ReturnInstanceType(2);
+            Console.WriteLine(watchObj.ToString());
+        }
+
+        private void ButtonHome_Click(object sender, RoutedEventArgs e)
+        {
+            Console.WriteLine("Home button is pressed");
         }
     }
 }

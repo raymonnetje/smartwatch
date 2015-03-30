@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Smartwatch
 {
-    public interface ITimeFormat
+    public interface ITimeFormat : IWatch
     {
         void Handle(TimeStateClient state);
     }
@@ -17,6 +17,7 @@ namespace Smartwatch
         {
             //Change the state to TwentyFourHours
             state.State = new TwentyFourHoursFormat();
+            Console.WriteLine("1");
         }
     }
 
