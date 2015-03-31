@@ -25,5 +25,11 @@ namespace Smartwatch
         {
             throw new NotImplementedException();
         }
+
+
+        public void Handle(Twitter twitter)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

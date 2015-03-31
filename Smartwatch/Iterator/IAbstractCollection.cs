@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Smartwatch
 {
-    public interface IWatch
+    public interface IAbstractCollection
     {
-        void Handle(TimeStateClient state);
-        void Handle(Twitter twitter);
+        Iterator CreateIterator();
     }
 }

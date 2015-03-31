@@ -7,23 +7,34 @@
         <Image Margin="108,0,103,-1" Source="Smartwatch-Mockup_03.jpg" Stretch="Fill"/>
 
         <Label x:Name="labelTime" Content="label" HorizontalAlignment="Center" Height="44" Margin="186,192,148,183" VerticalAlignment="Center" Width="108" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" Padding="6,5,5,15" FontSize="22"/>
-        <Button x:Name="ButtonState" Content="12/24" HorizontalAlignment="Left" Height="40" Margin="155,266,0,0" VerticalAlignment="Top" Width="41" Click="ButtonState_Click" Foreground="{x:Null}" BorderBrush="{x:Null}">
+        <Button x:Name="ButtonState" Content="12/24" HorizontalAlignment="Left" Height="40" Margin="155,266,0,0" VerticalAlignment="Top" Width="41" Click="ButtonState_Click" Foreground="{x:Null}" BorderBrush="{x:Null}" Focusable="False">
             <Button.Background>
                 <ImageBrush ImageSource="Button_1224.png"/>
             </Button.Background>
         </Button>
         <Label x:Name="LabelState" Content="" HorizontalAlignment="Left" Height="25" Margin="203,169,0,0" VerticalAlignment="Top" Width="36" Foreground="Black"/>
-        <Button x:Name="Button_Twitter" Content="Button" HorizontalAlignment="Left" Height="40" Margin="243,266,0,0" VerticalAlignment="Top" Width="41" Foreground="{x:Null}" BorderBrush="{x:Null}" Click="ButtonTwitter_Click">
+        <Button x:Name="Button_Twitter" Content="Button" HorizontalAlignment="Left" Height="40" Margin="243,266,0,0" VerticalAlignment="Top" Width="41" Foreground="{x:Null}" BorderBrush="{x:Null}" Focusable="False" Click="ButtonTwitter_Click">
             <Button.Background>
                 <ImageBrush ImageSource="Button_twitter.png"/>
             </Button.Background>
         </Button>
         <Label x:Name="Label_Datum" Content="Datum" HorizontalAlignment="Left" Height="23" Margin="191,219,0,0" VerticalAlignment="Top" Width="60" FontSize="10"/>
-        <Button x:Name="ButtonHome" Content="" HorizontalAlignment="Left" Height="40" Margin="199,266,0,0" VerticalAlignment="Top" Width="41" Foreground="{x:Null}" BorderBrush="{x:Null}" Click="ButtonHome_Click">
+        <Button x:Name="ButtonHome" Content="" HorizontalAlignment="Left" Height="40" Margin="199,266,0,0" VerticalAlignment="Top" Width="41" Foreground="{x:Null}" BorderBrush="{x:Null}" Focusable="False" Click="ButtonHome_Click">
             <Button.Background>
                 <ImageBrush ImageSource="Button_home.png"/>
             </Button.Background>
         </Button>
+        <Button x:Name="ButtonTwitterPrevious" Content="" HorizontalAlignment="Left" Height="40" Margin="155,266,0,0" VerticalAlignment="Top" Width="41" Foreground="{x:Null}" BorderBrush="{x:Null}" Visibility="Hidden" Click="ButtonTwitterPrevious_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="Button_twitter_previous.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="ButtonTwitterNext" Content="" HorizontalAlignment="Left" Height="40" Margin="243,266,0,0" VerticalAlignment="Top" Width="41" BorderBrush="{x:Null}" Foreground="{x:Null}" Visibility="Hidden" Click="ButtonTwitterNext_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="Button_twitter_next.png"/>
+            </Button.Background>
+        </Button>
+        <TextBox x:Name="TwitterTextBox" HorizontalAlignment="Left" Height="131" Margin="141,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="154" Visibility="Hidden"/>
 
     </Grid>
 </Window>

@@ -17,7 +17,11 @@ namespace Smartwatch
         {
             //Change the state to TwentyFourHours
             state.State = new TwentyFourHoursFormat();
-            Console.WriteLine("1");
+        }
+
+        public void Handle(Twitter twitter)
+        {
+            throw new NotImplementedException();
         }
     }
 
@@ -27,6 +31,11 @@ namespace Smartwatch
         {
             //Change the state to TwelveHours
             state.State = new TwelveHoursFormat();
+        }
+
+        public void Handle(Twitter twitter)
+        {
+            throw new NotImplementedException();
         }
     }
 }

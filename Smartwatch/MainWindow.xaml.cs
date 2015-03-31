@@ -139,13 +139,35 @@ namespace Smartwatch
 
         private void ButtonTwitter_Click(object sender, RoutedEventArgs e)
         {
+            ButtonState.Visibility = System.Windows.Visibility.Hidden;
+            Button_Twitter.Visibility = System.Windows.Visibility.Hidden;
+            ButtonTwitterPrevious.Visibility = System.Windows.Visibility.Visible;
+            ButtonTwitterNext.Visibility = System.Windows.Visibility.Visible;
+            TwitterTextBox.Visibility = System.Windows.Visibility.Visible;
+            
             IWatch watchObj = createFactory.ReturnInstanceType(2);
-            Console.WriteLine(watchObj.ToString());
+            
+            TwitterTextBox.Text = watchObj.ToString();
+            //Console.WriteLine(watchObj.ToString());
         }
 
         private void ButtonHome_Click(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine("Home button is pressed");
+            ButtonState.Visibility = System.Windows.Visibility.Visible;
+            Button_Twitter.Visibility = System.Windows.Visibility.Visible;
+            ButtonTwitterPrevious.Visibility = System.Windows.Visibility.Hidden;
+            ButtonTwitterNext.Visibility = System.Windows.Visibility.Hidden;
+            TwitterTextBox.Visibility = System.Windows.Visibility.Hidden;
+        }
+
+        private void ButtonTwitterPrevious_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ButtonTwitterNext_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
