@@ -9,23 +9,28 @@ namespace Smartwatch
     public class Creator
     {
         TimeStateClient a = new TimeStateClient(new TwentyFourHoursFormat());
-        Twitter b = new Twitter();
-        public IWatch ReturnInstanceType(int pType)
+        Collection collectionTweets = new Collection();
+        Twitter twitterObj;
+        Iterator iterator;
+
+        public IWatch ReturnInstanceType()
         {
-            if (pType == 1)
+            a.Request();
+            return a.State;
+        }
+
+        public Iterator ReturnTweets()
+        {
+            twitterObj = new Twitter();
+
+            int i = 0;
+            foreach (var testen in twitterObj.getTwitterArray())
             {
-                a.Request();
-                return a.State;
+                collectionTweets[i] = new Tweet(testen.ToString());
+                i++;
             }
-            else if (pType == 2)
-            {
-                b.getCurrentTweet();
-                return b.Iterator;
-            }
-            else
-            {
-                return a.State;
-            }
+            iterator = new Iterator(collectionTweets);
+            return iterator;
         }
     }
 }

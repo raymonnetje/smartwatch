@@ -27,7 +27,7 @@ namespace Smartwatch
         }
 
 
-        public void Handle(Twitter twitter)
+        public void Handle(Iterator iteratorTweet)
         {
             throw new NotImplementedException();
         }

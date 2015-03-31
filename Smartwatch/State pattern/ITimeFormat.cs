@@ -19,7 +19,7 @@ namespace Smartwatch
             state.State = new TwentyFourHoursFormat();
         }
 
-        public void Handle(Twitter twitter)
+        public void Handle(Iterator iteratorTweet)
         {
             throw new NotImplementedException();
         }
@@ -33,7 +33,7 @@ namespace Smartwatch
             state.State = new TwelveHoursFormat();
         }
 
-        public void Handle(Twitter twitter)
+        public void Handle(Iterator iteratorTweet)
         {
             throw new NotImplementedException();
         }

@@ -25,6 +25,7 @@ namespace Smartwatch
         Boolean runningApp;
         String timeformat;
         Creator createFactory;
+        Iterator tweetIterator;
 
         /// <summary>
         /// Initialize the variables
@@ -132,7 +133,7 @@ namespace Smartwatch
 
         private void ButtonState_Click(object sender, RoutedEventArgs e)
         {
-            IWatch watchObj = createFactory.ReturnInstanceType(1);
+            IWatch watchObj = createFactory.ReturnInstanceType();
             Console.WriteLine(watchObj.ToString());
             changeTimeFormat(watchObj.ToString());
         }
@@ -144,11 +145,11 @@ namespace Smartwatch
             ButtonTwitterPrevious.Visibility = System.Windows.Visibility.Visible;
             ButtonTwitterNext.Visibility = System.Windows.Visibility.Visible;
             TwitterTextBox.Visibility = System.Windows.Visibility.Visible;
+
+            tweetIterator = createFactory.ReturnTweets();
             
-            IWatch watchObj = createFactory.ReturnInstanceType(2);
-            
-            TwitterTextBox.Text = watchObj.ToString();
-            //Console.WriteLine(watchObj.ToString());
+
+            TwitterTextBox.Text = tweetIterator.First().Message;
         }
 
         private void ButtonHome_Click(object sender, RoutedEventArgs e)
@@ -162,12 +163,27 @@ namespace Smartwatch
 
         private void ButtonTwitterPrevious_Click(object sender, RoutedEventArgs e)
         {
-
+            if (!tweetIterator.IsAtBegin)
+            {
+                Tweet _tempTweet = tweetIterator.Previous();
+                if (_tempTweet != null)
+                {
+                    TwitterTextBox.Text = _tempTweet.Message;
+                }
+            }
+            
         }
 
         private void ButtonTwitterNext_Click(object sender, RoutedEventArgs e)
         {
-
+            if (!tweetIterator.IsAtEnd)
+            {
+                Tweet _tempTweet = tweetIterator.Next();
+                if (_tempTweet != null)
+                {
+                    TwitterTextBox.Text = _tempTweet.Message;
+                }
+            }
         }
     }
 }

@@ -11,11 +11,18 @@ namespace Smartwatch
         private Collection _collection;
         private int _current = 0;
         private int _step = 1;
+        private Twitter b;
 
         // Constructor
         public Iterator(Collection collection)
         {
             this._collection = collection;
+        }
+
+        public Iterator(Twitter b)
+        {
+            // TODO: Complete member initialization
+            this.b = b;
         }
 
         // Gets first item
@@ -28,9 +35,23 @@ namespace Smartwatch
         // Gets next item
         public Tweet Next()
         {
-            _current += _step;
-            if (!IsDone)
+            if (!IsAtEnd)
             {
+                _current += _step;
+                return _collection[_current] as Tweet;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        // Gets previous item
+        public Tweet Previous()
+        {
+            if (!IsAtBegin)
+            {
+                _current -= _step;
                 return _collection[_current] as Tweet;
             }
             else
@@ -53,9 +74,15 @@ namespace Smartwatch
         }
 
         // Gets whether iteration is complete
-        public bool IsDone
+        public bool IsAtBegin
         {
-            get { return _current >= _collection.Count; }
+            get { return _current <= 0; }
+        }
+
+        // Gets whether iteration is complete
+        public bool IsAtEnd
+        {
+            get { return _current >= _collection.Count - 1; }
         }
 
         public void Handle(TimeStateClient state)
@@ -63,7 +90,7 @@ namespace Smartwatch
             throw new NotImplementedException();
         }
 
-        public void Handle(Twitter twitter)
+        public void Handle(Iterator iteratorTweet)
         {
             throw new NotImplementedException();
         }

@@ -10,7 +10,8 @@ namespace Smartwatch
     {
         Tweet First();
         Tweet Next();
-        bool IsDone { get; }
+        bool IsAtBegin { get; }
+        bool IsAtEnd { get; }
         Tweet CurrentItem { get; }
     }
 }

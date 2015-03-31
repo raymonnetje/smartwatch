@@ -7,7 +7,7 @@ using Tweetinvi;
 
 namespace Smartwatch
 {
-    public class Twitter : IWatch
+    public class Twitter
     {
         private string accesToken = "3130580315-NM3kzW8GiVzV7Jeqlc0YiIKoK7ILGWTPkZZrQu1";
         private string accesTokenSecret = "irh16gh52kL3tkJGG41aIeKNibdezKwtRIbDW9pexaCGb";
@@ -16,11 +16,8 @@ namespace Smartwatch
 
         public Iterator iterator;
 
-        public Twitter()
-        {
-            // Build a collection for tweets
-            Collection collection = new Collection();
-            
+        public Array getTwitterArray()
+        {            
             // Setup your credentials
             TwitterCredentials.SetCredentials(accesToken, accesTokenSecret, consumerKey, consumerSecret);
 
@@ -34,50 +31,25 @@ namespace Smartwatch
             var tweets = Timeline.GetHomeTimeline(timelineParameter);
 
             Array test = tweets.ToArray();
-            int i = 0;
-            foreach (var testen in test)
-            {
-                collection[i] = new Tweet(testen.ToString());
-                i++;
-            }
- 
-            iterator = new Iterator(collection);
+
+            return test;
  
             // Skip every other item
-            iterator.Step = 1;
+            //iterator.Step = 1;
 
             //for (Tweet tweet = iterator.First(); !iterator.IsDone; tweet = iterator.Next())
             //{
             //    Console.WriteLine(tweet.Message);
             //}
         }
-
-        public Iterator Iterator { get; set; }
-
-        public Tweet getCurrentTweet()
-        {
-            return iterator.CurrentItem;
-        }
-
-        public Tweet getNextTweet()
-        {
-            if (!iterator.IsDone)
-            {
-                return iterator.Next();
-            }
-            else
-            {
-                return iterator.CurrentItem;
-            }
-        }
-
+        
         public void Handle(TimeStateClient state)
         {
             throw new NotImplementedException();
         }
 
 
-        public void Handle(Twitter twitter)
+        public void Handle(Tweet tweet)
         {
             throw new NotImplementedException();
         }

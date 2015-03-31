@@ -9,6 +9,6 @@ namespace Smartwatch
     public interface IWatch
     {
         void Handle(TimeStateClient state);
-        void Handle(Twitter twitter);
+        void Handle(Iterator iteratorTweet);
     }
 }
