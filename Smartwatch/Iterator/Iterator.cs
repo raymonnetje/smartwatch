@@ -11,18 +11,11 @@ namespace Smartwatch
         private Collection _collection;
         private int _current = 0;
         private int _step = 1;
-        private Twitter b;
 
         // Constructor
         public Iterator(Collection collection)
         {
             this._collection = collection;
-        }
-
-        public Iterator(Twitter b)
-        {
-            // TODO: Complete member initialization
-            this.b = b;
         }
 
         // Gets first item

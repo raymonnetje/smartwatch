@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Smartwatch
 {
-    public interface IAbstractCollection : IWatch
+    public interface IAbstractCollection
     {
         Iterator CreateIterator();
     }
