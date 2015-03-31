@@ -16,6 +16,11 @@ namespace Smartwatch
 
         public Iterator iterator;
 
+        /// <summary>
+        /// Make an array with 8 tweets.
+        /// Uses the Tweetinvi library to connect with twitter.com
+        /// </summary>
+        /// <returns>array with tweets</returns>
         public Array getTwitterArray()
         {            
             // Setup your credentials

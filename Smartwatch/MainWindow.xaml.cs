@@ -50,7 +50,7 @@ namespace Smartwatch
             {
                 currentTime = Time._instance.getTime();
                 writeTime(currentTime, timeformat);
-                Thread.Sleep(2000);
+                Thread.Sleep(500);
             }
             
         }
@@ -131,6 +131,11 @@ namespace Smartwatch
             }
         }
 
+        /// <summary>
+        /// Change the state from 12 to 24 or 24 to 12 hour format
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonState_Click(object sender, RoutedEventArgs e)
         {
             IWatch watchObj = createFactory.ReturnInstanceType();
@@ -138,6 +143,11 @@ namespace Smartwatch
             changeTimeFormat(watchObj.ToString());
         }
 
+        /// <summary>
+        /// Open the twitter block with tweets and display the next/ previous buttons
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonTwitter_Click(object sender, RoutedEventArgs e)
         {
             ButtonState.Visibility = System.Windows.Visibility.Hidden;
@@ -152,6 +162,11 @@ namespace Smartwatch
             TwitterTextBox.Text = tweetIterator.First().Message;
         }
 
+        /// <summary>
+        /// Go back to the clock view
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonHome_Click(object sender, RoutedEventArgs e)
         {
             ButtonState.Visibility = System.Windows.Visibility.Visible;
@@ -161,6 +176,11 @@ namespace Smartwatch
             TwitterTextBox.Visibility = System.Windows.Visibility.Hidden;
         }
 
+        /// <summary>
+        /// Show the previous tweet if exists
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonTwitterPrevious_Click(object sender, RoutedEventArgs e)
         {
             if (!tweetIterator.IsAtBegin)
@@ -174,6 +194,11 @@ namespace Smartwatch
             
         }
 
+        /// <summary>
+        /// Show the next tweet if exists
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonTwitterNext_Click(object sender, RoutedEventArgs e)
         {
             if (!tweetIterator.IsAtEnd)

@@ -8,17 +8,25 @@ namespace Smartwatch
 {
     public class Creator
     {
-        TimeStateClient a = new TimeStateClient(new TwentyFourHoursFormat());
+        TimeStateClient stateClient = new TimeStateClient(new TwentyFourHoursFormat());
         Collection collectionTweets = new Collection();
         Twitter twitterObj;
         Iterator iterator;
 
+        /// <summary>
+        /// Acces the factory with the State Pattern and change the state
+        /// </summary>
+        /// <returns>the state</returns>
         public IWatch ReturnInstanceType()
         {
-            a.Request();
-            return a.State;
+            stateClient.Request();
+            return stateClient.State;
         }
 
+        /// <summary>
+        /// Access the factory with the Iterator Pattern
+        /// </summary>
+        /// <returns>the iterator object</returns>
         public Iterator ReturnTweets()
         {
             twitterObj = new Twitter();

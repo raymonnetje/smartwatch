@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Smartwatch
 {
+    /// <summary>
+    /// Define the functions for the iterator
+    /// </summary>
     public interface IAbstractIterator : IWatch
     {
         Tweet First();

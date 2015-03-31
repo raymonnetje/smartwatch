@@ -10,6 +10,10 @@ namespace Smartwatch
     {
         public static readonly Time _instance = new Time();
 
+        /// <summary>
+        /// Get the system time
+        /// </summary>
+        /// <returns>Return the system time</returns>
         public DateTime getTime()
         {
             return DateTime.Now;

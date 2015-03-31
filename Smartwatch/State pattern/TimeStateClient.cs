@@ -8,6 +8,10 @@ namespace Smartwatch
 {
     public class TimeStateClient : IWatch
     {
+        /// <summary>
+        /// Make a default state
+        /// </summary>
+        /// <param name="state"></param>
         public TimeStateClient(ITimeFormat state)
         {
             State = state;
@@ -16,6 +20,9 @@ namespace Smartwatch
 
         public ITimeFormat State { get; set; }
 
+        /// <summary>
+        /// change the state
+        /// </summary>
         public void Request()
         {
             State.Handle(this);

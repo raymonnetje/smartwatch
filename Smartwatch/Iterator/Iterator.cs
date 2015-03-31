@@ -85,6 +85,7 @@ namespace Smartwatch
             get { return _current >= _collection.Count - 1; }
         }
 
+
         public void Handle(TimeStateClient state)
         {
             throw new NotImplementedException();
