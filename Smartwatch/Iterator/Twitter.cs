@@ -9,6 +9,7 @@ namespace Smartwatch
 {
     public class Twitter
     {
+        // Tokens own twitter account.
         private string accesToken = "3130580315-NM3kzW8GiVzV7Jeqlc0YiIKoK7ILGWTPkZZrQu1";
         private string accesTokenSecret = "irh16gh52kL3tkJGG41aIeKNibdezKwtRIbDW9pexaCGb";
         private string consumerKey = "RbwwU4rdCn7CsjG3KsfHRUCZA";
