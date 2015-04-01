@@ -35,24 +35,24 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Autofac">
-      <HintPath>E:\Tweetinvi 0\Autofac.dll</HintPath>
+      <HintPath>..\TweetInvi library\Autofac.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Threading.Tasks">
-      <HintPath>E:\Tweetinvi 0\Microsoft.Threading.Tasks.dll</HintPath>
+      <HintPath>..\TweetInvi library\Microsoft.Threading.Tasks.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Threading.Tasks.Extensions">
-      <HintPath>E:\Tweetinvi 0\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+      <HintPath>..\TweetInvi library\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>E:\Tweetinvi 0\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\TweetInvi library\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http.Extensions">
-      <HintPath>E:\Tweetinvi 0\System.Net.Http.Extensions.dll</HintPath>
+      <HintPath>..\TweetInvi library\System.Net.Http.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http.Primitives">
-      <HintPath>E:\Tweetinvi 0\System.Net.Http.Primitives.dll</HintPath>
+      <HintPath>..\TweetInvi library\System.Net.Http.Primitives.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -63,31 +63,31 @@
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
     <Reference Include="Tweetinvi">
-      <HintPath>E:\Tweetinvi 0\Tweetinvi.dll</HintPath>
+      <HintPath>..\TweetInvi library\Tweetinvi.dll</HintPath>
     </Reference>
     <Reference Include="Tweetinvi.Controllers">
-      <HintPath>E:\Tweetinvi 0\Tweetinvi.Controllers.dll</HintPath>
+      <HintPath>..\TweetInvi library\Tweetinvi.Controllers.dll</HintPath>
     </Reference>
     <Reference Include="Tweetinvi.Core">
-      <HintPath>E:\Tweetinvi 0\Tweetinvi.Core.dll</HintPath>
+      <HintPath>..\TweetInvi library\Tweetinvi.Core.dll</HintPath>
     </Reference>
     <Reference Include="Tweetinvi.Credentials">
-      <HintPath>E:\Tweetinvi 0\Tweetinvi.Credentials.dll</HintPath>
+      <HintPath>..\TweetInvi library\Tweetinvi.Credentials.dll</HintPath>
     </Reference>
     <Reference Include="Tweetinvi.Factories">
-      <HintPath>E:\Tweetinvi 0\Tweetinvi.Factories.dll</HintPath>
+      <HintPath>..\TweetInvi library\Tweetinvi.Factories.dll</HintPath>
     </Reference>
     <Reference Include="Tweetinvi.Logic">
-      <HintPath>E:\Tweetinvi 0\Tweetinvi.Logic.dll</HintPath>
+      <HintPath>..\TweetInvi library\Tweetinvi.Logic.dll</HintPath>
     </Reference>
     <Reference Include="Tweetinvi.Security">
-      <HintPath>E:\Tweetinvi 0\Tweetinvi.Security.dll</HintPath>
+      <HintPath>..\TweetInvi library\Tweetinvi.Security.dll</HintPath>
     </Reference>
     <Reference Include="Tweetinvi.Streams">
-      <HintPath>E:\Tweetinvi 0\Tweetinvi.Streams.dll</HintPath>
+      <HintPath>..\TweetInvi library\Tweetinvi.Streams.dll</HintPath>
     </Reference>
     <Reference Include="Tweetinvi.WebLogic">
-      <HintPath>E:\Tweetinvi 0\Tweetinvi.WebLogic.dll</HintPath>
+      <HintPath>..\TweetInvi library\Tweetinvi.WebLogic.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
@@ -167,6 +167,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Button_twitter_next.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
